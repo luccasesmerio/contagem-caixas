@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Resumo do Dia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Resumo por Letra</h1>
+    <div id="resumo"></div>
+    <a href="index.html" class="botao-flutuante">Voltar</a>
+    <script>
+        const data = JSON.parse(localStorage.getItem('registroLetras')) || {};
+        const resumoDiv = document.getElementById('resumo');
+        resumoDiv.innerHTML = Object.entries(data).map(([letra, valor]) => 
+            `<p><strong>${letra}:</strong> ${valor}</p>`).join('');
+    </script>
+</body>
+</html>
